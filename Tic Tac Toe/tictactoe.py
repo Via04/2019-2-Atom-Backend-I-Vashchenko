@@ -1,9 +1,10 @@
 class Field:
-    __curState = [[" "] * 3 for i in range(3)]
-    __winner = -1
-    __isCross = True
+    __curState = []
 
     def __init__(self):
+        self.__curState = [[" "] * 3 for _ in range(3)]
+        self.__winner = -1
+        self.__isCross = True
         print("The classic game Tic Tac Toe. Player 1 goes with crosses and player 2 with zeroes\n")
         for i in range(3):
             for j in range(3):
@@ -65,6 +66,7 @@ class Field:
 
     def show_winner(self):
         print("Player {} won the game!".format(self.__winner))
+        return self.__winner
 
     def make_turn(self, i, j):
         if self.__isCross:
